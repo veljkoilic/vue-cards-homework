@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE CARDS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+<div id="app" >
+
+    <card v-for="property in cards" v-bind:property='property'></card>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<script>
+    Vue.component('card',{
+        props:['property'],
+        template: '<div class="card"><img :src="property.imgURL" alt=""><h3>Name <span id="name">{{property.name}}</span></h3><h4>Price: <span id="price">{{property.price}}$</span></h4></div>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            cards:[
+                {name: "A product", price: 150, imgURL:"https://picsum.photos/310/200"},
+                {name: "Another Product", price: 50, imgURL:"https://picsum.photos/320/200"},
+                {name: "Product as well, lol", price: 20, imgURL:"https://picsum.photos/334/200"},
+                {name: "Might be a product", price: 220, imgURL:"https://picsum.photos/300/220"},
+                {name: "Definetely a product", price: 74, imgURL:"https://picsum.photos/300/200"},
+                {name: "Product", price: 13, imgURL:"https://picsum.photos/300/230"},
+                {name: "Just a product", price: 90, imgURL:"https://picsum.photos/301/200"},
+                {name: "NOT a product", price: 1730, imgURL:"https://picsum.photos/300/230"},
+                {name: "Something", price: 0, imgURL:"https://picsum.photos/302/200"},
+                {name: "Nothing", price: 1, imgURL:"https://picsum.photos/300/200"},
+                {name: "Some product", price: 99, imgURL:"https://picsum.photos/310/200"},
+                {name: "This one", price: 6, imgURL:"https://picsum.photos/300/203"},
+                {name: "That one", price: 62, imgURL:"https://picsum.photos/320/200"},
+                {name: "Another one", price: 93, imgURL:"https://picsum.photos/300/200"},
+                {name: "Last one", price: 89, imgURL:"https://picsum.photos/302/200"}
+
+
+            ]
+
+
+        },
+        methods:{
+
+        }
+
+
+    });
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
